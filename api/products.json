@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Ezogelin Çorba",
+    "desc": "Ezogelin çorba en leziz çorba.",
+    "category": "Çorba",
+    "img": "https://i4.hurimg.com/i/hurriyet/75/750x422/629620854e3fe02c2424a34a.jpg",
+    "price": 12,
+    "quantity": 1
+  },
+  {
+    "id": 2,
+    "name": "Mercimek Çorba",
+    "desc": "Mercimek çorbası en leziz mercimeklerden yapılır.",
+    "category": "Çorba",
+    "img": "https://cdn.yemek.com/mnresize/940/940/uploads/2014/06/mercimek-corbasi-yemekcom.jpg",
+    "price": 15,
+    "quantity": 1
+  },
+  {
+    "id": 3,
+    "name": "Tandır Çorbası",
+    "desc": "Afyon yöresine ait bu çorba hem çok lezzetli hemde doyurucu. Yapacak olanların şimdiden ellerine sağlık :)",
+    "category": "Çorba",
+    "img": "https://www.afyonyemek.com/wp-content/uploads/2022/11/tandir-corbasi.jpg",
+    "price": 20,
+    "quantity": 1
+  }
+]
