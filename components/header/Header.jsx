@@ -1,5 +1,5 @@
 "use client";
-import { toggleProductModal } from "@/store/productSlice";
+import { toggleCartModal, toggleProductModal } from "@/store/productSlice";
 import { Box, Modal, Typography } from "@mui/material";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -9,7 +9,8 @@ import ProductModal from "../products/ProductModal";
 import CartDrawer from "../cartDrawer/CartDrawer";
 
 const Header = () => {
-  const [show, setShow] = useState(true);
+  const isOpen = useSelector((state) => state.product.isCartModalOpen);
+  const dispatch = useDispatch();
 
   return (
     <header className="absolute w-full px-8 md:px-20 py-4 shadow-lg bg-gray-100 z-50">
@@ -38,14 +39,14 @@ const Header = () => {
         <section>
           <button
             className="custom-btn flex justify-center items-center gap-3"
-            onClick={() => setShow(!show)}
+            onClick={() => dispatch(toggleCartModal())}
           >
             <MdShoppingCart />
             <span>CART</span>
           </button>
         </section>
       </div>
-      {show && <CartDrawer show={show} setShow={setShow} />}
+      {isOpen && <CartDrawer />}
     </header>
   );
 };

@@ -26,7 +26,7 @@ const ProductItem = ({ product }) => {
     <div className="group relative rounded-md shadow-md">
       <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 h-48">
         <img
-          src={product.img}
+          src={product?.img}
           className="h-full w-full object-cover object-center lg:h-full lg:w-full"
           fill="true"
         />

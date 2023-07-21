@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleProductModal } from "@/store/productSlice";
+import { toggleCartModal, toggleProductModal } from "@/store/productSlice";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
@@ -14,6 +14,7 @@ import { addProduct } from "@/store/cartSlice";
 
 const ProductModal = ({ product }) => {
   const isOpen = useSelector((state) => state.product.isProductModalOpen);
+  const isOpenCart = useSelector((state) => state.product.isCartModalOpen);
   const dispatch = useDispatch();
 
   const [qty, setQty] = useState(1);
@@ -50,6 +51,7 @@ const ProductModal = ({ product }) => {
       })
     );
     dispatch(toggleProductModal());
+    if (!isOpenCart) dispatch(toggleCartModal());
   };
 
   return (
@@ -87,7 +89,7 @@ const ProductModal = ({ product }) => {
         </div>
         <div className="my-4">
           <img
-            src={product.img}
+            src={product?.img}
             className="h-full w-full object-cover object-center lg:h-full lg:w-full"
             fill="true"
           />
